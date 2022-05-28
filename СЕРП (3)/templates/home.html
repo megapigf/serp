@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vesterium</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#navbarExample01"
+              aria-controls="navbarExample01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item active">
+                    <a class="fas fa-home text-body fa-lg" aria-current="page" href="/">  </a>
+                    <a href="/games" class="fas fa-gamepad text-body fa-lg"></a>
+                </li>
+              </ul>
+            </div>
+            <div>
+                {% if "user" in session %}
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a href="/friends" class="fas fa-user-friends text-body"></a>
+                        <a href="/ack/{{ session['user'] }}" class="text-body">{{ session["user"] }}</a>
+                    </li>
+                </ul>
+                {% else %}
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a href="/login" class="btn btn-outline-body btn-rounded" data-mdb-ripple-color="dark">Вход</a>
+                        <a href="/reg" class="btn btn-white btn-rounded me-2 text-body">Регистрация</a>
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+          </div>
+        </nav>
+    </header>
+    <div
+        class="p-5 text-center bg-image"
+        style="
+        background-image: url('https://avatars.mds.yandex.net/get-mpic/4343038/img_id7080160356849759728.jpeg/orig');
+        height: 520px;
+        "
+    >
+        <div class="mask">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+            <h1 class="mb-3">СЕРП</h1>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="bg-dark">
+        <h4 class="text-body col-md-8 offset-md-2">
+            Вам предстоит взять под контроль одну из наций в альтернативной истории Европы прошлого века и привести её к богатству и процветанию. Это комплексная игра с асимметричными фракциями (у каждой нации разные особенности и пути к победе), пронизанная огромным количеством интересных решений и необычных ситуаций. Новичкам будет непросто, но из-за продуманного дизайна и интересного мира «Серп» — одна из лучших игр для перехода на более сложный уровень.
+        </h4>
+    </div>
+</body>
+</html>
